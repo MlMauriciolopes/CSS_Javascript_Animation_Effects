@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS & JavaScript Background Aniamtion Effects</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section>
+		<h2>Samurai Champloo</h2>
+		<div class="banner">
+			<div class="blocks"></div>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		const banner = document.getElementsByClassName('banner')[0];
+		const blocks = document.getElementsByClassName('blocks');
+		for (var i = 1; i < 400; i++){
+			banner.innerHTML += "<div class='blocks'></div>"; //Aspas do blocks tem que ser simples
+			const duration = Math.random() * 5;
+			blocks[i].style.animationDuration = 2+duration+'s';
+			blocks[i].style.animationDelay = duration+'s';
+		}
+
+		const section = document.querySelector('section');
+		setTimeout(function(){
+			section.classList.add('active')
+		},14000) //Ativação de classe após 14 segundos
+	</script>
+</body>
+</html>
